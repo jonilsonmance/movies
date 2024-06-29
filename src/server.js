@@ -1,3 +1,4 @@
+require('dotenv/config')
 const express = require("express")
 require("express-async-errors")
 const router = require("./routes")
@@ -28,7 +29,7 @@ app.use((error, request, response, next)=>{
   })
 })
 
-PORT = 2222
+PORT = process.env.PORT
 
 app.listen(PORT, ()=> console.log(`Server is running on Port: ${PORT}`))
 
